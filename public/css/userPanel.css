@@ -1,0 +1,948 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: "IRANSansWeb";
+    src: url(../font/IRANSansWeb.ttf) format("truetype");
+}
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+.parent{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: #f5f5f5;
+    float: left;
+    font-family: "IRANSansWeb", serif;
+}
+
+.parent * :focus , * :active{
+    outline: none;
+}
+
+button:hover , input[type=submit]:hover {
+    cursor: pointer;
+}
+
+textarea:hover {
+    cursor: text;
+}
+
+.Menu .name:hover{
+    cursor: pointer;
+}
+
+.sendMassagePage{
+    height: 100%;
+    width: 81.3%;
+    margin: 0;
+    background-color: #f5f5f5;
+    display: none;
+    float: left;
+}
+.sendMassagePage .container {
+    height: 84.3%;
+    width: 73.8%;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.02);
+    background-color: #ffffff;
+    position: relative;
+    top : 7.9%;
+    left: 13.2%;
+}
+
+.sendMassagePage .upperPart {
+    width: 100%;
+    height: 12.5%;
+    background-color: #313131;
+    position: absolute;
+}
+
+.sendMassagePage #headerIcon {
+    height:27.8% ;
+    width: 4.8%;
+    background-color: #313131;
+    position: absolute;
+    top : 36.1%;
+    right : 7.3%;
+}
+.sendMassagePage #mainHeader{
+    font-size: 25px;
+    font-weight: 500;
+    color: #ffffff;
+    position: absolute;
+    top : 32.4%;
+    right : 14%;
+}
+.sendMassagePage .lowerPart {
+    height: 87.5%;
+    position: relative;
+}
+
+.sendMassagePage form {
+    height: 100%;
+}
+
+.sendMassagePage #TargetHeader {
+    text-align: right;
+    color: #313131;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    top : 17.4%;
+    right: 7.3%;
+
+}
+.sendMassagePage #Target {
+    width: 85.2%;
+    height: 6.6%;
+    background-color: #fbfbfb;
+    border : none;
+    border-bottom : 4px solid ;
+    border-bottom-color : #4a90e2;
+    overflow : auto;
+    resize : none;
+    direction: rtl;
+    text-align: right;
+    position: absolute;
+    top: 23.5%;
+    left : 7.4%;
+}
+.sendMassagePage form:focus , #Target:focus  {
+    outline: 0;
+}
+
+.sendMassagePage #contentHeader{
+    text-align: right;
+    color: #3c3c3c;
+    font-size: 20px;
+    font-weight: 500;
+    position: absolute;
+    top : 32.4%;
+    right : 7.3%;
+}
+
+.sendMassagePage #content{
+    width: 85.2%;
+    height: 36%;
+    background-color: #fbfbfb;
+    border : none;
+    border-bottom : 4px solid ;
+    border-bottom-color : #4a90e2;
+    overflow : auto;
+    resize : none;
+    text-align: right;
+    direction: rtl;
+    color: #3c3c3c;
+    font-size: 17px;
+    font-weight: 300;
+    position: absolute;
+    top : 40%;
+    left : 7.5%;
+}
+
+.sendMassagePage #uploadButton {
+    width: 14.1%;
+    height: 6.7%;
+    background-image: linear-gradient(to top, #0088e2, #0088ff);
+    border-style : hidden;
+    border-radius : 50px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    position: absolute;
+    top : 82.5%;
+    left : 35.9%;
+}
+
+.sendMassagePage #uploadText {
+    width: 39.3%;
+    height: 4.5%;
+    text-align: center;
+    border : none;
+    border-bottom : 4px solid ;
+    border-bottom-color : #4a90e2;
+    overflow : auto;
+    resize : none;
+    position: absolute;
+    bottom: 10.8%;
+    left : 53.3%;
+}
+
+.sendMassagePage #Send {
+    width: 23.9%;
+    height: 6.7%;
+    background-image: linear-gradient(to top, #0088e2, #0088ff);
+    border-style : hidden;
+    border-radius : 50px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF;
+    position: absolute;
+    top : 82.5%;
+    left : 9.3%;
+}
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
+.adminBarresiGozaresh {
+    height: 100%;
+    width: 81.3%;
+    margin: 0;
+    background-color: #f5f5f5;
+    float: left;
+}
+
+.adminBarresiGozaresh .container {
+    width: 73.8%;
+    height: 84.3%;
+    position: relative;
+    top: 7.9%;
+    left: 13.2%;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.adminBarresiGozaresh .season {
+    width: 12.5%;
+    background-color: #f4f4f4;
+    font-size: 18px;
+    text-align: center;
+    color: #292929;
+    position: absolute;
+    top: 17.7%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border-radius: 40px;
+}
+
+.adminBarresiGozaresh #yearHeader {
+    font-size: 31px;
+    font-weight: 500;
+    text-align: center;
+    color: #292929;
+    position: absolute;
+}
+
+.adminBarresiGozaresh .arrows {
+    width: 5.1%;
+    height: 5.1%;
+    color: #d7d7d7;
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+}
+
+.adminBarresiGozaresh .middlePart {
+    background-color: #efefef;
+    height: 49.6%;
+    width: 100%;
+    position: absolute;
+    top: 27.6%;
+}
+
+.adminBarresiGozaresh .counters {
+    width: 29%;
+    height: 5.1%;
+    text-align: right;
+    color: #292929;
+    background-color: #fbfbfb;
+    position: absolute;
+    right: 5.2%;
+}
+
+.adminBarresiGozaresh #nextYearArrow {
+    top: 6.1%;
+    left: 57.5%;
+}
+
+.adminBarresiGozaresh #yearHeader {
+    top: 5.1%;
+    left: 46.2%;
+}
+
+.adminBarresiGozaresh #lastYearArrow {
+    top: 6.1%;
+    left: 37.4%;
+}
+
+.adminBarresiGozaresh #seasonOne {
+    left: 13.8%;
+}
+
+.adminBarresiGozaresh #seasonTwo {
+    left: 33.7%;
+}
+
+.adminBarresiGozaresh #seasonThree {
+    left: 53.5%;
+}
+
+.adminBarresiGozaresh #seasonFour {
+    left: 73.5%;
+}
+
+.adminBarresiGozaresh #allClasses {
+    bottom: 11.1%;
+    padding-top: 0.8%;
+    padding-right: 1.1%;
+}
+
+.adminBarresiGozaresh #seasonClasses {
+    bottom: 4.8%;
+    padding-top: 0.8%;
+    padding-right: 1.1%;
+}
+
+.adminBarresiGozaresh #jalasat {
+    width: 72%;
+    height: 100%;
+    text-decoration: none;
+    list-style-type: none;
+    font-family: IRANSansWeb, serif;
+    font-size: 17px;
+    text-align: center;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    overflow: auto;
+    position: absolute;
+    left:14% ;
+}
+
+.adminBarresiGozaresh .jalasatDates{
+    background-color: #fbfbfb;
+    border-bottom:  4px solid #4a90e2;
+    float: left;
+    width: 15.2%;
+    height: 10.6%;
+    display: none;
+    margin-top: 4%;
+    margin-right: 4.5%;
+    margin-left: 4.5%;
+}
+
+.adminBarresiGozaresh .theLinks {
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 300;
+    color: #3c3c3c;
+}
+
+.adminBarresiGozaresh .jalasatDatesSecond{
+    width: 15.2%;
+    height: 10.6%;
+    background-color: mediumaquamarine;
+    margin-top: 7.4%;
+}
+
+.adminBarresiGozaresh #jalasatLeftArrow {
+    width: 5.1%;
+    height: 10.3%;
+    display: inline-block;
+    position: absolute;
+    left: 3.7%;
+    top: 44.9%;
+}
+
+.adminBarresiGozaresh #jalasatRightArrow {
+    width: 5.1%;
+    height: 10.3%;
+    display: inline-block;
+    position: absolute;
+    right : 3.7%;
+    top: 44.9%;
+
+}
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
+.Menu {
+    width: 18.7%;
+    height: 100%;
+    background: #ffffff;
+    float: right;
+    margin: 0;
+}
+
+.Menu ul {
+    list-style-type:none;
+    width : 100%;
+    color: #241f20;
+    margin-left : 0 ;
+    margin-right : 0;
+    float : right;
+}
+.Menu .icon {
+    width : 23px;
+    height : 23px;
+    padding-left : 5.7%;
+    padding-top : 4.2%;
+    padding-bottom : 2%;
+    margin-right: 6.3%;
+    vertical-align : bottom;
+}
+.Menu .balaMenu {
+    text-align : center;
+    position : relative;
+    top : 3.7%;
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: linear-gradient(to right, rgba(0, 120, 254, 0), #4facfe);
+    border-image-slice: 1;
+    border-top : none;
+    border-right : none;
+}
+
+.Menu .painMenu {
+    text-align : right;
+    position : relative;
+    top : 2.6%;
+}
+
+.Menu #avatar {
+    border-radius : 50%;
+    padding : 0;
+    margin : auto ;
+    width : 44.8%;
+    height: 11.8%;
+}
+.Menu #userName {
+    font-family: IRANSansWeb , serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #4e4e4e;
+    text-align : center;
+    padding : 0;
+    margin-top : 5.2%;
+}
+.Menu #job {
+    font-family: IRANSansWeb , serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: #4e4e4e;
+    text-align : center;
+    padding : 0;
+    margin-top : 3% ;
+}
+.Menu #date {
+    font-family: IRANSansWeb, serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #2d93fb;
+    text-align : center;
+    width : 60.4%;
+    height : 3.5%;
+    padding : 4px 0;
+    margin : 3% auto 10%;
+    background-color: #e5f1ff;
+}
+
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
+.adminReviewGozaresh {
+    height: 100%;
+    width: 81.3%;
+    background-color: #f5f5f5;
+    position : relative;
+    display: none;
+    float: left;
+}
+.adminReviewGozaresh .container {
+    width: 73.8%;
+    height: 84.3%;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.02);
+    background-color: #ffffff;
+    border-radius : 7px;
+    position : relative;
+    left : 13.2%;
+    top : 7.9%;
+}
+
+.adminReviewGozaresh .smalltextareas{
+    width: 10.8%;
+    height: 4.2%;
+    background-color: #fbfbfb;
+    border : none;
+    border-bottom : 4px solid #4a90e2;
+    font-family: IRANSansWeb, serif;
+    color: #3c3c3c;
+    font-size: 15px;
+    font-weight: 300;
+    overflow : auto;
+    resize : none;
+    text-align : center;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+}
+.adminReviewGozaresh .textareas {
+    width: 91.9%;
+    height: 17.3%;
+    background-color: #fbfbfb;
+    border : none;
+    border-bottom : 4px solid ;
+    border-bottom-color : #4a90e2;
+    font-family: IRANSansWeb, serif;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: right;
+    color: #3c3c3c;
+    overflow : auto;
+    resize : none;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+}
+.adminReviewGozaresh .normaltext {
+    font-size: 20px;
+    color: #3c3c3c;
+    font-weight : 500;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+}
+.adminReviewGozaresh img {
+    width: 5.4%;
+    height: 5.4%;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+    top : 3.5%;
+    left : 90.4%;
+}
+.adminReviewGozaresh .textbozorg {
+    font-size: 25px;
+    font-weight: 500;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+    top : 4.1%;
+    right : 10.4%;
+}
+.adminReviewGozaresh .sabt {
+    width: 39.9%;
+    height: 5.8%;
+    background-image: linear-gradient(to top, #0088e2, #0088ff);
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    border : none;
+    border-radius : 25px;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+    top : 91.3%;
+    left : 30.1%;
+}
+.adminReviewGozaresh #tarikh{
+    top : 13.9%;
+    left : 90.5%;
+}
+.adminReviewGozaresh #hoze{
+    top : 13.6%;
+    left : 53%;
+
+}
+.adminReviewGozaresh #tedad{
+    top:13.4%;
+    left : 17%;
+}
+.adminReviewGozaresh #sharh{
+    top : 21.4%;
+    right : 4.1%;
+}
+.adminReviewGozaresh #barname{
+    top : 45.2%;
+    right : 4.1%;
+}
+.adminReviewGozaresh #lavazem{
+    top : 69.5%;
+    right : 4.1%;
+}
+.adminReviewGozaresh #sharhtextarea{
+    top : 26.9%;
+    left : 4.1%;
+}
+.adminReviewGozaresh #barnametextarea{
+    top : 49.9%;
+    left : 4.1%;
+}
+.adminReviewGozaresh #lavazemtextarea {
+    height : 12.2%;
+    top: 74.3%;
+    left : 4.1%;
+}
+.adminReviewGozaresh #tedadtextarea{
+    top : 13.4%;
+    left : 4.1%;
+    font-family: IRANSansWeb, serif;
+}
+.adminReviewGozaresh #hozetextarea {
+    top : 13.6%;
+    left : 40%;
+}
+.adminReviewGozaresh #tarikhtextarea {
+    top : 13.9%;
+    left : 78.2%;
+}
+
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
+.addTarheDarsPage {
+    height: 100%;
+    width: 81.3%;
+    position: relative;
+    margin: 0;
+    background-color: #f5f5f5;
+    display: none;
+    float: left;
+}
+
+.addTarheDarsPage .container {
+    width: 50.2%;
+    height: 57.3%;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.02);
+    background-color: #ffffff;
+    border-radius : 10px;
+    position : relative;
+    left : 25%;
+    top : 21.4%;
+}
+
+.addTarheDarsPage .logo {
+    width: 12.4%;
+    height: 12.4%;
+    position : absolute;
+    top : 9.9%;
+    left : 9.9%;
+}
+
+
+.addTarheDarsPage #normaltext1{
+    font-family: IRANSansWeb, serif;
+    font-size: 25px;
+    text-align: right;
+    color: #3c3c3c;
+    margin : 0;
+    position : absolute;
+    top : 10.1%;
+    right : 10.9%;
+}
+.addTarheDarsPage #normaltext2 {
+    font-family: IRANSansWeb, serif;
+    font-size: 18px;
+    font-weight: 300;
+    text-align: right;
+    color: #818181;
+    margin : 0;
+    position : absolute;
+    top : 18.4%;
+    right : 10.9%;
+
+}
+.addTarheDarsPage form{
+    margin : 0;
+}
+
+.addTarheDarsPage #submit {
+    width: 35.1%;
+    height: 9.9%;
+    background-image: linear-gradient(to top, #0088e2, #0088ff);
+    border-style : hidden;
+    border-radius : 50px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding : 0;
+    position : absolute;
+    top : 64.1%;
+    left : 10.9%;
+}
+
+.addTarheDarsPage #submit:hover {
+    cursor: pointer;
+}
+
+.addTarheDarsPage #button {
+    width: 35.1%;
+    height: 9.9%;
+    font-family: IRANSansWeb, serif;
+    font-size: 18px;
+    font-weight: 500;
+    border: solid 1px #979797;
+    border-radius : 50px;
+    background-color :#FFFFFF;
+    color: #2c2c2c;
+    padding : 0;
+    position : absolute;
+    top : 64.1%;
+    left : 50.3%;
+}
+
+.addTarheDarsPage #custom-button{
+    width : 17.9%;
+    height : 8.5%;
+    background-image: linear-gradient(to top, #0088e2, #0088ff);
+    border-style : hidden;
+    border-radius : 50px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    padding : 0;
+    position : absolute;
+    top : 42.9%;
+    left : 10.9%;
+}
+
+.addTarheDarsPage #fileText{
+    width : 57.8%;
+    height : 6.6%;
+    font-family: IRANSansWeb, serif;
+    border-bottom-style : solid;
+    font-size: 18px;
+    font-weight: 300;
+    position : absolute;
+    text-align: left;
+    color: #3c3c3c;
+    top : 44.8%;
+    left : 31.3%;
+}
+
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
+.addGozareshPage {
+    height: 100%;
+    width: 81.3%;
+    background-color: #f5f5f5;
+    position : relative;
+    display: none;
+    float: left;
+}
+.addGozareshPage .container {
+    width: 73.8%;
+    height: 84.3%;
+    box-shadow: 0 2px 9px 0 rgba(0, 0, 0, 0.02);
+    background-color: #ffffff;
+    border-radius : 7px;
+    position : relative;
+    left : 13.2%;
+    top: 7.9%;
+}
+.addGozareshPage .smalltextareas{
+    width: 10.8%;
+    height: 4.2%;
+    background-color: #fbfbfb;
+    border : none;
+    border-bottom : 4px solid ;
+    border-bottom-color : #4a90e2;
+    overflow : auto;
+    resize : none;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+}
+.addGozareshPage .textareas {
+    width: 91.9%;
+    height: 17.3%;
+    background-color: #fbfbfb;
+    border : none;
+    border-bottom : 4px solid ;
+    border-bottom-color : #4a90e2;
+    overflow : auto;
+    resize : none;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+}
+.addGozareshPage .normaltext {
+    font-size: 20px;
+    color: #3c3c3c;
+    font-weight : 500;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+}
+.addGozareshPage img {
+    width: 5.4%;
+    height: 5.4%;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+    top : 3.5%;
+    left : 90.4%;
+
+}
+.addGozareshPage .textbozorg {
+    font-size: 25px;
+    font-weight: 500;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+    top : 4.1%;
+    right : 10.4%;
+
+
+}
+.addGozareshPage  .sabt {
+    width: 39.9%;
+    height: 5.8%;
+    background-image: linear-gradient(to top, #0088e2, #0088ff);
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    border : none;
+    border-radius : 25px;
+    margin : 0;
+    padding : 0;
+    position : absolute;
+    top : 91.3%;
+    left : 30.1%;
+}
+
+
+.addGozareshPage 	#tarikhAddGozaresh{
+    top : 13.9%;
+    left : 90.5%;
+}
+.addGozareshPage	#hozeAddGozaresh{
+    top : 13.6%;
+    left : 53%;
+}
+.addGozareshPage	#tedadAddGozaresh{
+    top:13.4%;
+    left : 17%;
+}
+.addGozareshPage	#sharhAddGozaresh{
+    top : 21.4%;
+    right : 4.1%;
+}
+.addGozareshPage	#barnameAddGozaresh{
+    top : 45.2%;
+    right : 4.1%;
+}
+.addGozareshPage #lavazemAddGozaresh{
+    top : 69.5%;
+    right : 4.1%;
+}
+.addGozareshPage  #sharhTextareaAddGozaresh{
+    top : 26.9%;
+    left : 4.1%;
+    font-family: IRANSansWeb, serif;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: right;
+    color: #3c3c3c;
+}
+.addGozareshPage	#barnameTextareaAddGozaresh{
+    top : 49.9%;
+    left : 4.1%;
+    font-family: IRANSansWeb, serif;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: right;
+    color: #3c3c3c;
+}
+.addGozareshPage	#lavazemTextareaAddGozaresh {
+    height : 12.2%;
+    top: 74.3%;
+    left : 4.1%;
+    font-family: IRANSansWeb, serif;
+    font-size: 17px;
+    font-weight: 300;
+    text-align: right;
+    color: #3c3c3c;
+}
+
+.addGozareshPage	#tedadTextareaAddGozaresh{
+    top : 13.4%;
+    left : 4.1%;
+    font-family: IRANSansWeb, serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    color: #3c3c3c;
+}
+.addGozareshPage	#hozeTextareaAddGozaresh {
+    top : 13.6%;
+    left : 40%;
+    font-family: IRANSansWeb, serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    color: #3c3c3c;
+}
+.addGozareshPage    #tarikhTextareaAddGozaresh {
+    top : 13.9%;
+    left : 78.2%;
+    font-family: IRANSansWeb, serif;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    box-sizing: inherit;
+    color: #3c3c3c;
+}
+
+.addGozareshPage    .tableContainer {
+    display : none;
+    height : 31.4%;
+    width : 36.8%;
+    box-shadow: 0 0 38px 0 rgba(0, 0, 0, 0.21);
+    background-color: #ffffff;
+    border-radius : 20px;
+    position : absolute;
+    top : 18.5%;
+    left : 58.4%;
+    overflow: auto;
+}
+
+.addGozareshPage  .closeButton {
+    position : relative;
+    margin-left : 92.6%;
+    margin-top : 3.7%;
+    width : 3.7%;
+    height : 5%;
+}
+
+.addGozareshPage .weekdays {
+    padding-left: 1.4%;
+    margin : 0;
+}
+
+.addGozareshPage .weekdays li {
+    width: 2.5%;
+    display: inline-block;
+    font-size: 10px;
+    padding-left: 9%;
+    color: #9a9a9a;
+    text-align: center;
+}
+
+.addGozareshPage .days {
+    padding-left: 1.4%;
+    margin: 0;
+}
+
+.addGozareshPage .days li {
+    width: 2.5%;
+    list-style-type: none;
+    display: inline-block;
+    padding-left: 9%;
+    text-align: center;
+    font-size:13px;
+    color: #2c2c2c;
+}
+
+.addGozareshPage .days .dayNumbers:hover {
+    color: #4a90e2;
+}
+

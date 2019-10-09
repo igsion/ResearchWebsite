@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset = UTF-8"/>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/adminPanel.css">
+</head>
+<body>
+<div id="parent-page" class="parent">
+    <div class="menu">
+        <div class="balaMenu">
+            <div>
+                <img src="/icon/avatar-1.jpg" alt="avatar" id="avatar"/>
+            </div>
+            <div id="username"><%= fullname %></div>
+            <div id="job"><%= job %></div>
+            <div id="date"><%= todayDate %></div>
+        </div>
+        <div class="painMenu">
+            <div class="menuItems" onclick="displayNewDabir()">
+                لیست دبیران<img id="teachersIcon" class="icons" src="/icon/iconfinder_study_115795.svg" alt="study"/>
+            </div>
+            <div class="menuItems" onclick="displayTarheDars()">
+                مشاهده طرح دروس<img id="lessonsIcon" class="icons"
+                                    src="/icon/iconfinder_Tilda_Icons_1ed_calendar_3586371.svg"
+                                    alt="study"/>
+            </div>
+            <div class="menuItems">
+                بررسی گزارش ها<img id="reviewReportsIcon" class="icons"
+                                   src="/icon/iconfinder_icon-46-note-checked_314408.svg"
+                                   alt="study"/>
+            </div>
+            <div class="menuItems" onclick="displayBarresi()">
+                بررسی جلسات<img id="reviewMeetingsIcon" class="icons" src="/icon/iconfinder_icon-hashtag_2867908.svg"
+                                alt="study"/>
+            </div>
+            <div class="menuItems">
+                ارسال پیام<img id="sendMassageIcon" class="icons" src="/icon/iconfinder_talk_chat_107188.svg"
+                               alt="study"/>
+            </div>
+            <div class="menuItems">
+                نامه حقوق<img id="hooghooghLetterIcon" class="icons" src="/icon/iconfinder_study_115795.svg"
+                              alt="study"/>
+            </div>
+        </div>
+        <script>
+            function displayNewDabir() {
+                document.getElementById("newDabir-Page").style.display = "inline-block";
+                document.getElementById("tarheDars-Page").style.display = "none";
+                document.getElementById("barresi-Page").style.display = "none";
+            }
+
+            function displayTarheDars() {
+                document.getElementById("newDabir-Page").style.display = "none";
+                document.getElementById("tarheDars-Page").style.display = "inline-block";
+                document.getElementById("barresi-Page").style.display = "none";
+            }
+
+            function displayBarresi() {
+                document.getElementById("newDabir-Page").style.display = "none";
+                document.getElementById("tarheDars-Page").style.display = "none";
+                document.getElementById("barresi-Page").style.display = "inline-block";
+            }
+        </script>
+    </div>
+    <div id="newDabir-Page" class="adminNewDabir">
+        <div class="container">
+            <img id="backIcon" src="icon/back.svg" alt="back"/>
+            <a id="back" href="#"> بازگشت </a>
+            <p id="header">دبیر جدید</p>
+            <form action="/addNewTeacher" method="post">
+                <input type="text" id="firstnameInput" class="inputs" name="firstname" required="required"/>
+                <span id="firstnameInputText" class="inputTexts">نام</span>
+                <input type="text" id="lastnameInput" class="inputs" name="lastname" required="required"/>
+                <span id="lastnameInputText" class="inputTexts">نام خانوادگی</span>
+                <input type="text" id="jobInput" class="inputs" name="job" required="required"/>
+                <span id="jobInputText" class="inputTexts">حوزه تدریس</span>
+                <input type="email" id="emailInput" class="inputs" name="email" required="required"/>
+                <span id="emailInputText" class="inputTexts">ایمیل</span>
+                <input type="text" id="passwordInput" class="inputs" name="password" required="required"/>
+                <span id="passwordInputText" class="inputTexts">رمز پیشفرض</span>
+                <input type="checkbox" id="isPriorInput" name="isPrior"/>
+                <span id="isPriorInputText" class="inputTexts">اولویت ویژه</span>
+                <button id="sumbitButton" type="submit" name="submit">ایجاد پروفایل</button>
+            </form>
+        </div>
+    </div>
+    <div id="tarheDars-Page" class="adminTarheDars">
+        <div class="container">
+            <p id="header">طرح دروس</p>
+            <img class="icons" id="headerIcon" src="/icon/iconfinder_study_115795.svg" alt=""/>
+            <table class="myTable">
+                <thead class="headerContainer">
+                <tr class="tableHead">
+                    <td class="links"></td>
+                    <td class="dates">تاریخ ثبت</td>
+                    <td class="teachers">نام دبیر</td>
+                    <td class="subjects">نام درس</td>
+                </tr>
+                </thead>
+                <tbody class="bodyContainer">
+                <% for(var j = 0 ; j < responseTarhs.length ; j++) { %>
+                    <tr class="tableRow">
+                        <td class="links"><a href="/admin/tarheDars/<%= responseTarhs[j].keyToDownload %>"
+                                             class="links">دانلود</a></td>
+                        <td class="dates"><%= responseTarhs[j].year + "/" + responseTarhs[j].month + "/"
+                            + responseTarhs[j].day %></td>
+                        <td class="teachers"><%= responseTarhs[j].teacher %></td>
+                        <td class="subjects"><%= responseTarhs[j].lessonName %></td>
+                    </tr>
+                <% } %>
+                <tr class="tableRow">
+                    <td class="links"><a href="#" class="links">دانلود</a></td>
+                    <td class="dates">asdad</td>
+                    <td class="teachers">asdad</td>
+                    <td class="subjects">asdad</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="barresi-Page" class="adminBarresi">
+        <div class="container">
+            <p id="header">بررسی جلسات</p>
+            <img class="icons" id="headerIcon" src="/icon/iconfinder_study_115795.svg" alt=""/>
+            <table class="myTable">
+                <thead class="headerContainer">
+                <tr class="tableHead">
+                    <th id="totalNameHeader">تعداد کل جلسات</th>
+                    <th id="schoolNameHeader">مدرسه</th>
+                    <th id="teacherNameHeader">نام دبیر</th>
+                    <th id="lessonNameHeader">نام درس</th>
+                </tr>
+                </thead>
+                <tbody class="bodyContainer">
+                <% for(var i = 0 ; i < responseUsers.length ; i++){ %>
+                    <tr class="tableRow" onclick="window.location.href='/admin/check/<%= responseUsers[i].email %>'">
+                        <td class="totalName"><%= responseUsers[i].totalSessions %></td>
+                        <td class="schoolName"><%= responseUsers[i].school %></td>
+                        <td class="teacherName"><%= responseUsers[i].firstname + " " + responseUsers[i].lastname %></td>
+                        <td class="lessonName"><%= responseUsers[i].job %></td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="reviewGozaresh-page" class="adminReviewGozaresh">
+        <div class="container">
+            <img src="/icon/iconfinder_icon-42-note-add_314405.svg"></img>
+            <div class="textbozorg">گزارش جلسه</div>
+            <div id="tarikh" class="normaltext">تاریخ</div>
+            <div id="hoze" class="normaltext">حوزه تدریس</div>
+            <div id="tedad" class="normaltext">تعداد زنگ</div>
+            <div id="sharh" class="normaltext">شرح گزارش</div>
+            <div id="barname" class="normaltext">برنامه جلسه آینده</div>
+            <div id="lavazem" class="normaltext">لوازم مورد نیاز جلسه اینده</div>
+            <p id="sharhtextarea" class="textareas"><%= review.sharh %></p>
+            <p id="barnametextarea" class="textareas"><%= review.barname %></p>
+            <p id="lavazemtextarea" class="textareas"><%= review.lavazem %></p>
+            <p id="tedadtextarea" class="smalltextareas"><%= review.tedad %></p>
+            <p id="hozetextarea" class="smalltextareas"><%= review.hoze %></p>
+            <p id="tarikhtextarea" class="smalltextareas"><%= review.tarikh %></p>
+        </div>
+    </div>
+    <div id="barresiGozaresh-page" class="adminBarresiGozaresh">
+        <div class="container">
+            <a href="/admin/lastYear" class="arrows" id="lastYearArrow"><img src="/icon/left.svg"/></a>
+            <div id="yearHeader"><%= myDate.jy %></div>
+            <a href="/admin/nextYear" class="arrows" id="nextYearArrow"><img src="/icon/right.svg"/></a>
+            <a href="/admin/spring">
+                <div class="season" id="seasonOne">بهار</div>
+            </a>
+            <a href="/admin/summer">
+                <div class="season" id="seasonTwo">تابستان</div>
+            </a>
+            <a href="/admin/fall">
+                <div class="season" id="seasonThree">پاییز</div>
+            </a>
+            <a href="/admin/winter">
+                <div class="season" id="seasonFour">زمستان</div>
+            </a>
+            <div class="middlePart">
+                <img id="jalasatLeftArrow" src="/icon/left.svg"/>
+                <ul id="jalasat">
+                    <% for(var i = 0 ;  i < response.length ; i++) { %>
+                    <li class="jalasatDates"><a class="theLinks" href="/admin/review/<%= response[i].id %>"><%= response[i].year
+                            + "/" + response[i].month + "/" + response[i].day %></a></li>
+                    <% } %>
+                </ul>
+                <img id="jalasatRightArrow" src="/icon/right.svg"/>
+            </div>
+            <div class="counters" id="allClasses">
+                <span class="normalText"> تعداد کل جلسات :</span>
+                <span class="counterNumber"><%= total %></span>
+            </div>
+            <div class="counters" id="seasonClasses">
+                <span class="normalText">تعداد جلسات</span>
+                <span class="seasonTotal"><%= currentSeason %></span>
+                <span class="counterNumber"> : <%= seasonTotal %></span>
+            </div>
+            <script>
+                <% if(page == 4) { %>
+                document.getElementById("tarheDars-Page").style.display = "none";
+                document.getElementById("newDabir-Page").style.display = "none";
+                document.getElementById("barresi-Page").style.display = "none";
+                document.getElementById("reviewGozaresh-page").style.display = "none";
+                document.getElementById("barresiGozaresh-page").style.display = "inline-block";
+                console.log(1342);
+                <% } %>
+
+                <% if(page == 5) { %>
+                document.getElementById("reviewGozaresh-page").style.display = "inline-block";
+                document.getElementById("barresiGozaresh-page").style.display = "none";
+                document.getElementById("tarheDars-Page").style.display = "none";
+                document.getElementById("newDabir-Page").style.display = "none";
+                document.getElementById("barresi-Page").style.display = "none";
+                console.log(1342);
+                <% } %>
+
+                var jd = document.getElementsByClassName("jalasatDates");
+                <% var counter = 0; %>
+                var x = 0;
+                <% var yearCounter = 0; %>
+
+                x = 0;
+                <% counter = 0; %>
+                <% for(var i = 0 ;  i < response.length ; i++) { %>
+                <% if(response[i].season === currentSeasonNumber && response[i].year === myDate.jy && counter < 16){ %>
+                <% counter++; %>
+                jd[x].style.display = "inline-block";
+                <% }else{ %>
+                jd[x].style.display = "none";
+                <% } %>
+                x++;
+                <% } %>
+
+                function nextYear() {
+                    document.getElementById("yearHeader").innerHTML = "<% myDate.jy %>";
+                }
+
+                function prevYear() {
+                    document.getElementById("yearHeader").innerHTML = "<% myDate.jy %>";
+                }
+
+            </script>
+        </div>
+    </div>
+</div>
+</body>
+</html>
