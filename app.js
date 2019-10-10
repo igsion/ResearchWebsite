@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var mongoose = require('mongoose');
 var upload = multer();
 var app = express();
+var path = require('path');
 var usersModel = require('./models/users');
 
 var login = require('./Routes/Login');
@@ -16,7 +17,7 @@ var admin = require('./Routes/AdminPanel');
 var sendMassage = require('./Routes/SendMassage');
 var addTeacher = require('./Routes/AddNewTeacher');
 
-app.set('views','./views');
+app.set('views',path.join(__dirname , 'views'));
 app.set('view engine' , 'ejs');
 
 app.use(express.static('public'));

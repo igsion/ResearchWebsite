@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e59027a-fd3a-4c8a-bdf8-5e0ba9ab8ecf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/AdminPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/AdminPanel.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Routes/UserPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/UserPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +215,8 @@
       <workItem from="1570572886921" duration="444000" />
       <workItem from="1570619921251" duration="9116000" />
       <workItem from="1570633551656" duration="1202000" />
-      <workItem from="1570655736229" duration="2583000" />
+      <workItem from="1570655736229" duration="3872000" />
+      <workItem from="1570701084829" duration="1566000" />
     </task>
     <servers />
   </component>
@@ -230,7 +228,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
