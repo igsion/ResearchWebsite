@@ -53,7 +53,7 @@ router.get('/', checkSignIn ,function (req, res , next) {
         }
         usersModel.User.find(function (err, respon) {
             userNames = respon;
-            res.render('userPanel', {
+            res.render('userPanel.ejs', {
                 response: resp, fullname: req.session.fullname, currentSeason: "", myDate: myDate
                 , currentSeasonNumber: currentSeasonNumber, job: req.session.job, total: totalSessions, seasonTotal: 0
                 , review: review, page: page, todayDate: todayDate , userNames : userNames
@@ -83,7 +83,7 @@ router.get('/spring' , function(req, res) {
     page = 0;
     reportsModel.Report.find({user : req.session.email , year : myDate.jy } ,function(err, response){
         resp = response;
-        res.render('userPanel' , { response : resp , fullname : req.session.fullname , currentSeason : "بهار", myDate: myDate
+        res.render('userPanel.ejs' , { response : resp , fullname : req.session.fullname , currentSeason : "بهار", myDate: myDate
             , currentSeasonNumber : currentSeasonNumber , job : req.session.job , total : totalSessions , seasonTotal : 0
             , review : review , page : page , todayDate : todayDate , userNames : userNames});
     });
@@ -95,7 +95,7 @@ router.get('/summer' , function(req, res) {
     page = 0;
     reportsModel.Report.find({user : req.session.email , year : myDate.jy } ,function(err, response){
         resp = response;
-        res.render('userPanel' , { response : resp , fullname : req.session.fullname , currentSeason : "تابستان", myDate: myDate
+        res.render('userPanel.ejs' , { response : resp , fullname : req.session.fullname , currentSeason : "تابستان", myDate: myDate
             , currentSeasonNumber : currentSeasonNumber ,job : req.session.job , total : totalSessions , seasonTotal : 0
             , review : review , page : page , todayDate : todayDate , userNames : userNames});
     });
@@ -107,7 +107,7 @@ router.get('/fall' , function(req, res) {
     page = 0;
     reportsModel.Report.find({user : req.session.email , year : myDate.jy } ,function(err, response){
         resp = response;
-        res.render('userPanel' , { response : resp , fullname : req.session.fullname , currentSeason : "پاییز", myDate: myDate
+        res.render('userPanel.ejs' , { response : resp , fullname : req.session.fullname , currentSeason : "پاییز", myDate: myDate
             , currentSeasonNumber : currentSeasonNumber ,job : req.session.job , total : totalSessions , seasonTotal : 0
             , review : review , page : page , todayDate : todayDate , userNames : userNames});
     });
@@ -119,7 +119,7 @@ router.get('/winter' , function(req, res) {
     page = 0;
     reportsModel.Report.find({user : req.session.email , year : myDate.jy } ,function(err, response){
         resp = response;
-        res.render('userPanel' , { response : resp , fullname : req.session.fullname, currentSeason : "زمستان", myDate: myDate
+        res.render('userPanel.ejs' , { response : resp , fullname : req.session.fullname, currentSeason : "زمستان", myDate: myDate
             , currentSeasonNumber : currentSeasonNumber ,job : req.session.job , total : totalSessions , seasonTotal : 0
             , review : review , page : page , todayDate : todayDate , userNames : userNames});
     });

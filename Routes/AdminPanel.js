@@ -32,7 +32,7 @@ router.get('/', function (req, res, next) {
         responseUsers = responseUser;
         tarhModel.LessonPlan.find(function (err, responseTarh) {
             responseTarhs = responseTarh;
-            res.render('adminPanel', {
+            res.render('adminPanel.ejs', {
                 title: 'Admin Panel', fullname: req.session.fullname, job: req.session.job,
                 responseUsers: responseUsers, responseTarhs: responseTarhs, response: resp, todayDate: todayDate,
                 currentSeason: "", myDate: myDate, currentSeasonNumber: currentSeasonNumber, total: totalSessions,
@@ -58,7 +58,7 @@ router.get('/check/:user', function (req, res, next) {
     reportsModel.Report.find({user: req.params.user, year: myDate.jy}, function (err, response) {
         page = 4;
         resp = response;
-        res.render('adminPanel', {
+        res.render('adminPanel.ejs', {
             title: 'Admin Panel', fullname: req.session.fullname, job: req.session.job,
             responseUsers: {}, responseTarhs: {}, response: resp, todayDate: todayDate,
             currentSeason: "", myDate: myDate, currentSeasonNumber: currentSeasonNumber, total: totalSessions,
@@ -73,7 +73,7 @@ router.get('/nextYear', function (req, res, next) {
     console.log(myDate);
     reportsModel.Report.find({user: user, year: myDate.jy}, function (err, response) {
         resp = response;
-        res.render('adminPanel', {
+        res.render('adminPanel.ejs', {
             title: 'Admin Panel', fullname: req.session.fullname, job: req.session.job,
             responseUsers: responseUsers, responseTarhs: responseTarhs, response: resp, todayDate: todayDate,
             currentSeason: "", myDate: myDate, currentSeasonNumber: currentSeasonNumber, total: totalSessions,
@@ -86,7 +86,7 @@ router.get('/lastYear', function (req, res, next) {
     myDate.jy += -1;
     reportsModel.Report.find({user: user, year: myDate.jy}, function (err, response) {
         resp = response;
-        res.render('adminPanel', {
+        res.render('adminPanel.ejs', {
             title: 'Admin Panel', fullname: req.session.fullname, job: req.session.job,
             responseUsers: responseUsers, responseTarhs: responseTarhs, response: resp, todayDate: todayDate,
             currentSeason: "", myDate: myDate, currentSeasonNumber: currentSeasonNumber, total: totalSessions,
@@ -96,7 +96,7 @@ router.get('/lastYear', function (req, res, next) {
 });
 router.get('/spring', function (req, res, next) {
     currentSeasonNumber = 1;
-    res.render('adminPanel', {
+    res.render('adminPanel.ejs', {
         title: 'Admin Panel', fullname: req.session.fullname, job: req.session.job,
         responseUsers: responseUsers, responseTarhs: responseTarhs, response: resp, todayDate: todayDate,
         currentSeason: "", myDate: myDate, currentSeasonNumber: currentSeasonNumber, total: totalSessions,

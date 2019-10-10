@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6e59027a-fd3a-4c8a-bdf8-5e0ba9ab8ecf" name="Default Changelist" comment="" />
+    <list default="true" id="6e59027a-fd3a-4c8a-bdf8-5e0ba9ab8ecf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/AdminPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/AdminPanel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routes/UserPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/Routes/UserPanel.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +23,23 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectId" id="1Pv3UF4gg2iTIja1uQmTll5DIr8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/icon" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -202,10 +218,22 @@
       <workItem from="1570572886921" duration="444000" />
       <workItem from="1570619921251" duration="9116000" />
       <workItem from="1570633551656" duration="1202000" />
+      <workItem from="1570655736229" duration="2583000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
