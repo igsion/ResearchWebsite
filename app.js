@@ -38,6 +38,10 @@ app.post('/Forget' , function (req , res) {
     res.send("recieved your request!");
 });
 
+userModel.User.remove({isAdmin: true} , function (err, res) {
+   console.log("yes");
+});
+
 var newUser = new userModel.User({
     firstname: "رضا",
     lastname: "اقایاری",
