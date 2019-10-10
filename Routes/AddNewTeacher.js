@@ -32,7 +32,7 @@ router.post('/', function (req, res) {
         if (UserInfo.isPrior == "on") {
             var newUser = new userModel.User({
                 firstname: UserInfo.firstname,
-                lasttname: UserInfo.lasttname,
+                lastname: UserInfo.lastname,
                 job: UserInfo.job,
                 email: UserInfo.email,
                 password: UserInfo.password,

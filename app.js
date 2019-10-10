@@ -40,7 +40,7 @@ app.post('/Forget' , function (req , res) {
 
 var newUser = new userModel.User({
     firstname: "رضا",
-    lasttname: "اقایاری",
+    lastname: "اقایاری",
     job: "مسئول پژوهش کل",
     email: "r_aghayari@yahoo.com",
     password: "123456",
