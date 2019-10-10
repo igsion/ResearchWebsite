@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 var upload = multer();
 var app = express();
 var path = require('path');
-var usersModel = require('./models/users');
+var userModel = require('./models/users');
 
 var login = require('./Routes/Login');
 var userPanel = require('./Routes/UserPanel');
@@ -36,6 +36,23 @@ app.use('/admin' , admin);
 app.post('/Forget' , function (req , res) {
     console.log(req.body.username);
     res.send("recieved your request!");
+});
+
+var newUser = new userModel.User({
+    firstname: "رضا",
+    lasttname: "اقایاری",
+    job: "مسئول پژوهش کل",
+    email: "r_aghayari@yahoo.com",
+    password: "123456",
+    isPrior: true,
+    isAdmin: true
+});
+
+newUser.save(function (err, Teacher) {
+    if (err)
+        console.log("eeeeerrrrrrrrrrorrr");
+    else
+        console.log("heyyyyyyy")
 });
 
 module.exports = app;
