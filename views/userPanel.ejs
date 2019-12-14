@@ -17,9 +17,9 @@
             <p id="contentHeader" class="kharab">متن پیام</p>
             <form action="/sendMassage" method="POST" enctype="multipart/form-data">
                 <select name="theTarget" id="Target" class="kharab">
-                    <% for(var k =0 ; k < userNames.length ; k++) { %>
+                    <% for(var k = 0 ; k < userNames.length ; k++) { %>
                         <option value="<%= userNames[k].email %>"><%= userNames[k].firstname + " " +
-                            userNames[k].lastname%></option>
+                            userNames[k].lastname %></option>
                     <% } %>
                 </select>
                 <textarea name="mainContent" id="content" class="kharab"></textarea>
@@ -43,6 +43,34 @@
                     uploadText.innerHTML = realButton.value;
                 });
             </script>
+        </div>
+    </div>
+
+    <div id="receiveMassage-page" class="receiveMassagePage">
+        <div class="container">
+            <div id="mainHeader">
+                <p id="mainHeaderText">
+                    پیام های دریافتی
+                </p>
+            </div>
+            <table class="myTable">
+                <thead class="headerContainer">
+                <tr class="tableHead">
+                    <th id="titleHeader">تاریخ</th>
+                    <th id="fromHeader">از طرف</th>
+                    <th id="dateHeader">عنوان</th>
+                </tr>
+                </thead>
+                <tbody class="bodyContainer">
+                <% for(var i = 0 ; i < 3 ; i++){ %>
+                    <tr class="tableRow" onclick="window.location.href='#'">
+                        <td class="titleName">abd</td>
+                        <td class="fromName">abd</td>
+                        <td class="dateName">abd</td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
         </div>
     </div>
 
@@ -86,8 +114,8 @@
                 <img id="jalasatLeftArrow" src="/icon/left.svg"/>
                 <ul id="jalasat">
                     <% for(var i = 0 ;  i < response.length ; i++) { %>
-                        <li class="jalasatDates"><a class="theLinks" href="/user/<%=response[i].id%>"><%= response[i].year
-                                + "/" + response[i].month + "/" + response[i].day %></a></li>
+                    <li class="jalasatDates"><a class="theLinks" href="/user/<%= response[i].id %>"><%= response[i].year
+                            + "/" + response[i].month + "/" + response[i].day %></a></li>
                     <% } %>
                 </ul>
                 <img id="jalasatRightArrow" src="/icon/right.svg"/>
@@ -285,7 +313,8 @@
                 </li>
                 <li>
                     <div class="name">
-                        انتخاب مدرسه <img class="icon" src="/icon/iconfinder_education-school-learn-study-06_2125344.svg"/>
+                        انتخاب مدرسه <img class="icon"
+                                          src="/icon/iconfinder_education-school-learn-study-06_2125344.svg"/>
                     </div>
                 </li>
                 <li>
@@ -318,7 +347,7 @@
                 </li>
             </ul>
             <script>
-                <%if(page === 5) {%>
+                <% if(page === 5) { %>
                 document.getElementById("reviewGozaresh-page").style.display = "inline-block";
                 document.getElementById("tedadJalasat-page").style.display = "none";
                 <% } %>

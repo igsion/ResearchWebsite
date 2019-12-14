@@ -52,6 +52,7 @@ textarea:hover {
     display: none;
     float: left;
 }
+
 .sendMassagePage .container {
     height: 84.3%;
     width: 73.8%;
@@ -195,11 +196,96 @@ textarea:hover {
 }
 /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 
+.receiveMassagePage {
+    height: 100%;
+    width: 81.3%;
+    margin: 0;
+    background-color: #f5f5f5;
+    float: left;
+}
+
+.receiveMassagePage .container {
+    width: 73.8%;
+    height: 84.3%;
+    position: relative;
+    top: 7.9%;
+    left: 13.2%;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.receiveMassagePage #mainHeader {
+    background-color: #2d93fb;
+    width: 100%;
+    height: 12.5%;
+    font-family: Vazir, serif;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    color: #ffffff;
+}
+
+.receiveMassagePage #mainHeaderText {
+    padding-top: 3%;
+}
+
+.receiveMassagePage .myTable {
+    width: 88.1%;
+    height: 80.6%;
+    position: absolute;
+    left: 6.5%;
+    top: 14.6%;
+    background-color: #f8f8f8;
+    display: block;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: solid 1px black;
+}
+
+.receiveMassagePage .myTable thead {
+    width: 100%;
+    position:relative;
+    display: block;
+    overflow-y: auto;
+    background-color: #313131;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 0;
+    color: #3798fa;
+    text-align: right;
+}
+
+.receiveMassagePage .myTable tbody {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: block;
+    position:relative;
+}
+
+.receiveMassagePage .myTable tr {
+    width: 100%;
+    display:flex;
+}
+
+.receiveMassagePage .myTable td , .receiveMassagePage .myTable th   {
+    width: 100%;
+    flex-basis:100%;
+    flex-grow:2;
+    display: block;
+}
+.receiveMassagePage .myTable tbody {
+    max-height: 91%;
+}
+
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+
 .adminBarresiGozaresh {
     height: 100%;
     width: 81.3%;
     margin: 0;
     background-color: #f5f5f5;
+    display: none;
     float: left;
 }
 
