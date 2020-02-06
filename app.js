@@ -24,6 +24,9 @@ app.use(express.static('public'));
 app.use(cookieParser());
 app.use(session({secret: "this is secret"}));
 
+app.get('/' , function (req, res) {
+   res.redirect('/login');
+});
 app.use('/user' , userPanel);
 app.use('/login' , login);
 app.use('/forget' , forget);
@@ -54,9 +57,9 @@ var newUser = new userModel.User({
 
 newUser.save(function (err, Teacher) {
     if (err)
-        console.log("eeeeerrrrrrrrrrorrr");
+        console.log("admin couldn't be created");
     else
-        console.log("heyyyyyyy")
+        console.log("admin created")
 });
 
 module.exports = app;

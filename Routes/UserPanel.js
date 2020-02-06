@@ -15,6 +15,7 @@ console.log(convertor(date.toJalaali(d.getFullYear(),d.getMonth()+1 , d.getDate(
 var months = ["فروردین", "اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"];
 var weekdays = ["شنبه","یکشنبه","دوشنبه","سه شنبه","چهارشنبه","پنجشنبه","جمعه"];
 var currentSeasonNumber , userNames , totalSessions;
+
 var review = {
     sharh : "",
     barname : "" ,
@@ -27,10 +28,9 @@ var review = {
 router.use(cookieParser());
 router.use(session({secret: "Shh, its a secret!"}));
 
-var page = 0;
+var page = 1;
 var todayDate = weekdays[d.getDay()+1] + "، " + myDate.jd + " " + months[myDate.jm] + " " +
     convertor(date.toJalaali(d.getFullYear(),d.getMonth()+1 , d.getDate()).jy).englishNumber().toString();
-
 
 function checkSignIn(req, res , next){
     if(req.session.email){
@@ -66,6 +66,30 @@ router.use('/', function(err, req, res, next){
     res.redirect('/login');
 });
 
+router.get('/sendMassagePage' , function(req, res) {
+    page = 5;
+    res.redirect('/user')
+});
+
+router.get('/reviewGozareshPage' , function(req, res) {
+    page = 3;
+    res.redirect('/user')
+});
+
+router.get('/addTarhPage' , function(req, res) {
+    page = 2;
+    res.redirect('/user')
+});
+
+router.get('/addGozareshPage' , function(req, res) {
+    page = 1;
+    res.redirect('/user')
+});
+
+router.get('/tedadJalasatPage' , function(req, res) {
+    page = 4;
+    res.redirect('/user')
+});
 
 router.get('/nextYear' , function(req, res) {
     myDate.jy += 1;
@@ -80,7 +104,6 @@ router.get('/lastYear' , function(req, res) {
 router.get('/spring' , function(req, res) {
     var resp = null;
     currentSeasonNumber = 1;
-    page = 0;
     reportsModel.Report.find({user : req.session.email , year : myDate.jy } ,function(err, response){
         resp = response;
         res.render('userPanel.ejs' , { response : resp , fullname : req.session.fullname , currentSeason : "بهار", myDate: myDate
@@ -92,7 +115,6 @@ router.get('/spring' , function(req, res) {
 router.get('/summer' , function(req, res) {
     var resp = null;
     currentSeasonNumber = 2;
-    page = 0;
     reportsModel.Report.find({user : req.session.email , year : myDate.jy } ,function(err, response){
         resp = response;
         res.render('userPanel.ejs' , { response : resp , fullname : req.session.fullname , currentSeason : "تابستان", myDate: myDate
@@ -104,7 +126,6 @@ router.get('/summer' , function(req, res) {
 router.get('/fall' , function(req, res) {
     var resp = null;
     currentSeasonNumber = 3;
-    page = 0;
     reportsModel.Report.find({user : req.session.email , year : myDate.jy } ,function(err, response){
         resp = response;
         res.render('userPanel.ejs' , { response : resp , fullname : req.session.fullname , currentSeason : "پاییز", myDate: myDate
@@ -116,7 +137,6 @@ router.get('/fall' , function(req, res) {
 router.get('/winter' , function(req, res) {
     var resp = null;
     currentSeasonNumber = 4;
-    page = 0;
     reportsModel.Report.find({user : req.session.email , year : myDate.jy } ,function(err, response){
         resp = response;
         res.render('userPanel.ejs' , { response : resp , fullname : req.session.fullname, currentSeason : "زمستان", myDate: myDate
@@ -135,7 +155,7 @@ router.get('/:id' , function(req, res) {
         review.hoze = response.area;
         review.tarikh = response.year + "/" + response.month + "/" + response.day;
         console.log(review);
-        page = 5;
+        page = 3;
         res.redirect('/user');
     });
 });

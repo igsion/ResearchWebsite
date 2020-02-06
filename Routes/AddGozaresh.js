@@ -15,11 +15,11 @@ router.use(express.static('public'));
 
 var sessions = 0;
 
-router.post('/' , function (req, res , next) {
+router.post('/' , function (req, response , next) {
     var reportInfo = req.body;
     if(!reportInfo.descriptionInput || !reportInfo.planInput || !reportInfo.toolsInput || !reportInfo.numberInput
         || !reportInfo.areaInput){
-        res.render("Sorry, you provided worng info");
+        response.render("Sorry, you provided worng info");
     }else{
         var newReport = new reportsModel.Report({
             user: req.session.email,
@@ -32,7 +32,7 @@ router.post('/' , function (req, res , next) {
             season: reportInfo.dateSeason,
             month: reportInfo.dateMonth,
             day: reportInfo.dateDay,
-            condition: 0
+            condition: 1
         });
 
         newReport.save(function(err, Report){
@@ -50,6 +50,7 @@ router.post('/' , function (req, res , next) {
                     ,function (err, resp) {
                         console.log(resp);
                         console.log(1);
+                        response.redirect('/user');
                     });
                 });
             }

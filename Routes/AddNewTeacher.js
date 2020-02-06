@@ -25,25 +25,26 @@ router.post('/', function (req, res) {
                 job: UserInfo.job,
                 email: UserInfo.email,
                 password: UserInfo.password,
+                school : UserInfo.school,
                 isPrior: false,
                 isAdmin: false
             });
         }
-        if (UserInfo.isPrior == "on") {
+        if (UserInfo.isPrior === "on") {
             var newUser = new userModel.User({
                 firstname: UserInfo.firstname,
                 lastname: UserInfo.lastname,
                 job: UserInfo.job,
                 email: UserInfo.email,
                 password: UserInfo.password,
+                school : UserInfo.school,
                 isPrior: true,
                 isAdmin: false
             });
         }
-
         newUser.save(function (err, Teacher) {
             if (err)
-                console.log("eeeeerrrrrrrrrrorrr")
+                console.log("eeeeerrrrrrrrrrorrr");
             else
                 console.log("heyyyyyyy")
         });

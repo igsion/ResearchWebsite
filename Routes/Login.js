@@ -18,7 +18,7 @@ router.use(upload.array());
 router.use(express.static('public'));
 
 router.get('/' , function (req , res , next) {
-    res.render('Login-Forget.ejs' , { title : 'dasd' , username : 'dadsa' ,  job : 'dasdad' , date : 'dad'})
+    res.render('Login-Forget.ejs' , { title : 'dasd' , username : 'dadsa' ,  job : 'dasdad' , date : 'dad' , color : 0})
 });
 
 router.post('/', function (req, res , next ) {

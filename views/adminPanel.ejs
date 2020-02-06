@@ -75,6 +75,8 @@
                 <span id="lastnameInputText" class="inputTexts">نام خانوادگی</span>
                 <input type="text" id="jobInput" class="inputs" name="job" required="required"/>
                 <span id="jobInputText" class="inputTexts">حوزه تدریس</span>
+                <input type="text" id="schoolInput" class="inputs" name="school" required="required"/>
+                <span id="schoolInputText" class="inputTexts">مدرسه</span>
                 <input type="email" id="emailInput" class="inputs" name="email" required="required"/>
                 <span id="emailInputText" class="inputTexts">ایمیل</span>
                 <input type="text" id="passwordInput" class="inputs" name="password" required="required"/>
@@ -155,6 +157,16 @@
             <p id="tedadtextarea" class="smalltextareas"><%= review.tedad %></p>
             <p id="hozetextarea" class="smalltextareas"><%= review.hoze %></p>
             <p id="tarikhtextarea" class="smalltextareas"><%= review.tarikh %></p>
+            <% if(review.condition == 1) { %>
+                <a class="accept-button" href="admin/accept"><img src="icon/accept-button.jpg" alt="accept"></a>
+                <a class="reject-button" href="admin/reject"><img src="icon/reject-button.jpg" alt="reject"></a>
+            <% } %>
+            <% if(review.condition == 2) { %>
+            <div class="rejected">گزارش رد شد</div>
+            <% } %>
+            <% if(review.condition == 3) { %>
+                <div class="accepted">گزارش تایید شد</div>
+            <% } %>
         </div>
     </div>
     <div id="barresiGozaresh-page" class="adminBarresiGozaresh">
@@ -178,8 +190,21 @@
                 <img id="jalasatLeftArrow" src="/icon/left.svg"/>
                 <ul id="jalasat">
                     <% for(var i = 0 ;  i < response.length ; i++) { %>
-                    <li class="jalasatDates"><a class="theLinks" href="/admin/review/<%= response[i].id %>"><%= response[i].year
-                            + "/" + response[i].month + "/" + response[i].day %></a></li>
+                        <% if(response[i].condition == 3) { %>
+                            <li class="jalasatDates" style="border-bottom:  4px solid lawngreen"><a class="theLinks"
+                                                                                                  href="/admin/review/<%= response[i].id %>"><%= response[i].year
+                                    + "/" + response[i].month + "/" + response[i].day %></a></li>
+                        <% } %>
+                        <% if(response[i].condition == 2) { %>
+                            <li class="jalasatDates" style="border-bottom:  4px solid red"><a class="theLinks"
+                                                                                                  href="/admin/review/<%= response[i].id %>"><%= response[i].year
+                                    + "/" + response[i].month + "/" + response[i].day %></a></li>
+                        <% } %>
+                        <% if(response[i].condition == 1) { %>
+                            <li class="jalasatDates" style="border-bottom:  4px solid #4a90e2"><a class="theLinks"
+                                                                                                 href="/admin/review/<%= response[i].id %>"><%= response[i].year
+                                    + "/" + response[i].month + "/" + response[i].day %></a></li>
+                        <% } %>
                     <% } %>
                 </ul>
                 <img id="jalasatRightArrow" src="/icon/right.svg"/>

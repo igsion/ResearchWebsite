@@ -129,7 +129,7 @@ button:hover , input[type=submit]:hover {
 
 .adminNewDabir .container {
     width: 50.2%;
-    height: 59%;
+    height: 79%;
     position: absolute;
     top: 21.4%;
     left: 25%;
@@ -146,6 +146,9 @@ button:hover , input[type=submit]:hover {
 }
 .adminNewDabir .inputs {
     position: absolute;
+    width: 36.3%;
+    height: 5%;
+    right: 26.1%;
     background-color: #fbfbfb;
     border: none;
     border-bottom: 4px solid #4a90e2;
@@ -181,61 +184,56 @@ button:hover , input[type=submit]:hover {
 }
 
 .adminNewDabir #firstnameInput {
-    width: 36.3%;
-    height: 6%;
     position: absolute;
-    top: 19%;
-    right: 26.1%;
+    top: 15%;
 }
 .adminNewDabir #firstnameInputText {
     position: absolute;
-    top: 19.5%;
+    top: 15.5%;
 }
 .adminNewDabir #lastnameInput {
-    width: 36.3%;
-    height: 6%;
     position: absolute;
-    top: 30%;
-    right: 26.1%;
+    top: 25%;
 }
 .adminNewDabir #lastnameInputText {
     position: absolute;
-    top: 30.5%;
+    top: 25.5%;
 }
 .adminNewDabir #jobInput {
-    width: 36.3%;
-    height: 6%;
     position: absolute;
-    top: 41.1%;
-    right: 26.1%;
+    top: 35.1%;
 }
 .adminNewDabir #jobInputText {
     position: absolute;
-    top: 41.6%;
+    top: 35.6%;
+}
+.adminNewDabir #schoolInput {
+    position: absolute;
+    top: 45.1%;
+}
+.adminNewDabir #schoolInputText {
+    position: absolute;
+    top: 45.6%;
 }
 .adminNewDabir #emailInput {
     width: 66.6%;
-    height: 6%;
     position: absolute;
-    top: 52.3%;
-    right: 26.1%;
+    top: 55.3%;
     direction: ltr;
 }
 .adminNewDabir #emailInputText {
     position: absolute;
-    top: 52.8%;
+    top: 55.8%;
 }
 .adminNewDabir #passwordInput {
     width: 66.6%;
-    height: 6%;
     position: absolute;
-    top: 63.4%;
-    right: 26.1%;
+    top: 65.4%;
     direction: ltr;
 }
 .adminNewDabir #passwordInputText {
     position: absolute;
-    top: 63.9%;
+    top: 65.9%;
 }
 .adminNewDabir #isPriorInput {
     position: absolute;
@@ -474,7 +472,6 @@ button:hover , input[type=submit]:hover {
 .adminBarresi .myTable tbody {
     max-height: 91%;
 }
-
 .adminBarresi .myTable #lessonNameHeader {
     padding-right: 1.7%;
     padding-top: 0.7%;
@@ -694,6 +691,47 @@ button:hover , input[type=submit]:hover {
 .adminReviewGozaresh #tarikhtextarea {
     top : 13.9%;
     left : 78.2%;
+}
+
+.adminReviewGozaresh .rejected {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6.9%;
+    background-color: #fff1f1;
+    text-align: center;
+    padding-top: 1%;
+    color: #d72828;
+    font-size: 24px;
+    font-weight: 500;
+}
+.adminReviewGozaresh .accepted {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6.9%;
+    background-color: #f1fff4;
+    text-align: center;
+    padding-top: 1%;
+    color: #417505;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.adminReviewGozaresh .accept-button {
+    position: absolute;
+    height: 8.3%;
+    width: 8.3%;
+    right: 41.4%;
+    bottom: 2.9%;
+}
+
+.adminReviewGozaresh .reject-button {
+    position: absolute;
+    height: 8.3%;
+    width: 8.3%;
+    left: 40.4%;
+    bottom: 2.9%;
 }
 
 /*kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk*/

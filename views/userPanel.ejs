@@ -4,78 +4,80 @@
     <meta http-equiv="content-type" content="text/html; charset = UTF-8"/>
     <title>پنل کاربری</title>
     <link rel="stylesheet" href="/css/userPanel.css">
+
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+
 </head>
 <body>
-<div class="parent">
-    <div id="sendMassage-page" class="sendMassagePage">
-        <div class="container">
-            <div class="upperPart">
-                <p id="mainHeader"> ارسال پیام </p>
-                <img id="headerIcon" src="/icon/iconfinder_education-school-learn-study-06_2125344.svg"/>
-            </div>
-            <p id="TargetHeader" class="kharab">گیرنده پیام</p>
-            <p id="contentHeader" class="kharab">متن پیام</p>
-            <form action="/sendMassage" method="POST" enctype="multipart/form-data">
-                <select name="theTarget" id="Target" class="kharab">
-                    <% for(var k = 0 ; k < userNames.length ; k++) { %>
-                        <option value="<%= userNames[k].email %>"><%= userNames[k].firstname + " " +
-                            userNames[k].lastname %></option>
-                    <% } %>
-                </select>
-                <textarea name="mainContent" id="content" class="kharab"></textarea>
+<div class="container-fluid no-gutters">
+    <!--    <div id="sendMassage-page" class="sendMassagePage">-->
+    <!--        <div class="container">-->
+    <!--            <div class="upperPart">-->
+    <!--                <p id="mainHeader"> ارسال پیام </p>-->
+    <!--                <img id="headerIcon" src="/icon/iconfinder_education-school-learn-study-06_2125344.svg"/>-->
+    <!--            </div>-->
+    <!--            <p id="TargetHeader" class="kharab">گیرنده پیام</p>-->
+    <!--            <p id="contentHeader" class="kharab">متن پیام</p>-->
+    <!--            <form action="/sendMassage" method="POST" enctype="multipart/form-data">-->
+    <!--                <select name="theTarget" id="Target" class="kharab">-->
+    <!--                    <% for(var k = 0 ; k < userNames.length ; k++) { %>-->
+    <!--                        <option value="<%= userNames[k].email %>"><%= userNames[k].firstname + " " + userNames[k].lastname %></option>-->
+    <!--                    <% } %>-->
+    <!--                </select>-->
+    <!--                <textarea name="mainContent" id="content" class="kharab"></textarea>-->
 
-                <input id="fileUpload" type="file" name="messageAttachment"/>
+    <!--                <input id="fileUpload" type="file" name="messageAttachment"/>-->
 
-                <button id="uploadButton" type="button" class="kharab"> بارگزاری</button>
-                <span id="uploadText" class="kharab"> No file chosen, yet.</span>
+    <!--                <button id="uploadButton" type="button" class="kharab"> بارگزاری</button>-->
+    <!--                <span id="uploadText" class="kharab"> No file chosen, yet.</span>-->
 
-                <input id="Send" type="submit" value="ارسال پیام" class="kharab">
-            </form>
-            <script>
-                const realButton = document.getElementById("fileUpload");
-                const fakeButton = document.getElementById("uploadButton");
-                const uploadText = document.getElementById("uploadText");
+    <!--                <input id="Send" type="submit" value="ارسال پیام" class="kharab">-->
+    <!--            </form>-->
+    <!--            <script>-->
+    <!--                const realButton = document.getElementById("fileUpload");-->
+    <!--                const fakeButton = document.getElementById("uploadButton");-->
+    <!--                const uploadText = document.getElementById("uploadText");-->
 
-                fakeButton.addEventListener("click", function () {
-                    realButton.click();
-                });
-                realButton.addEventListener("change", function () {
-                    uploadText.innerHTML = realButton.value;
-                });
-            </script>
-        </div>
-    </div>
+    <!--                fakeButton.addEventListener("click", function () {-->
+    <!--                    realButton.click();-->
+    <!--                });-->
+    <!--                realButton.addEventListener("change", function () {-->
+    <!--                    uploadText.innerHTML = realButton.value;-->
+    <!--                });-->
+    <!--            </script>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
-    <div id="receiveMassage-page" class="receiveMassagePage">
-        <div class="container">
-            <div id="mainHeader">
-                <p id="mainHeaderText">
-                    پیام های دریافتی
-                </p>
-            </div>
-            <table class="myTable">
-                <thead class="headerContainer">
-                <tr class="tableHead">
-                    <th id="titleHeader">تاریخ</th>
-                    <th id="fromHeader">از طرف</th>
-                    <th id="dateHeader">عنوان</th>
-                </tr>
-                </thead>
-                <tbody class="bodyContainer">
-                <% for(var i = 0 ; i < 3 ; i++){ %>
-                    <tr class="tableRow" onclick="window.location.href='#'">
-                        <td class="titleName">abd</td>
-                        <td class="fromName">abd</td>
-                        <td class="dateName">abd</td>
-                    </tr>
-                <% } %>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <!--    <div id="receiveMassage-page" class="receiveMassagePage">-->
+    <!--        <div class="no-gutters container">-->
+    <!--            <div class="text row rounded-top align-content-center">-->
+    <!--                <div class="col text-center">-->
+    <!--                    پیام های دریافتی-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            <div class="myTable no-gutters">-->
+    <!--                <div class="tableHeader">-->
+    <!--                    <div class="headerContent1">عنوان</div>-->
+    <!--                    <div class="headerContent2">از طرف</div>-->
+    <!--                    <div class="headerContent3">تاریخ</div>-->
+    <!--                </div>-->
+    <!--                <div class="myRow row no-gutters">-->
+    <!--                    <div class="content1">هوا فضا</div>-->
+    <!--                    <div class="content2">شبنام</div>-->
+    <!--                    <div class="content3">تاریخ</div>-->
+    <!--                </div>-->
+    <!--                <div class="tableFooter">-->
+
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
 
     <div id="reviewGozaresh-page" class="adminReviewGozaresh">
-        <div class="container">
+        <div class="no-gutters container">
             <img src="/icon/iconfinder_icon-42-note-add_314405.svg"></img>
             <div class="textbozorg">گزارش جلسه</div>
             <div id="tarikh" class="normaltext">تاریخ</div>
@@ -94,7 +96,7 @@
     </div>
 
     <div id="tedadJalasat-page" class="adminBarresiGozaresh">
-        <div class="container">
+        <div class="no-gutters container">
             <a href="/user/lastYear" class="arrows" id="lastYearArrow"><img src="/icon/left.svg"/></a>
             <div id="yearHeader"><%= myDate.jy %></div>
             <a href="/user/nextYear" class="arrows" id="nextYearArrow"><img src="/icon/right.svg"/></a>
@@ -114,8 +116,26 @@
                 <img id="jalasatLeftArrow" src="/icon/left.svg"/>
                 <ul id="jalasat">
                     <% for(var i = 0 ;  i < response.length ; i++) { %>
-                    <li class="jalasatDates"><a class="theLinks" href="/user/<%= response[i].id %>"><%= response[i].year
-                            + "/" + response[i].month + "/" + response[i].day %></a></li>
+                        <% if(response[i].condition == 3) { %>
+                            <li class="jalasatDates" style="border-bottom:  4px solid lawngreen"><a class="theLinks"
+                                                                                                    href="/user/<%= response[i].id %>"><%= response[i].year
+                                    + "/" + response[i].month + "/" + response[i].day %></a></li>
+                        <% } %>
+                        <% if(response[i].condition == 2) { %>
+                            <li class="jalasatDates" style="border-bottom:  4px solid red"><a class="theLinks"
+                                                                                              href="/user/<%= response[i].id %>"><%= response[i].year
+                                    + "/" + response[i].month + "/" + response[i].day %></a></li>
+                        <% } %>
+                        <% if(response[i].condition == 1) { %>
+                            <li class="jalasatDates" style="border-bottom:  4px solid #4a90e2"><a class="theLinks"
+                                                                                                  href="/user/<%= response[i].id %>"><%= response[i].year
+                                    + "/" + response[i].month + "/" + response[i].day %></a></li>
+                        <% } %>
+                            <% if(response[i].condition == 0) { %>
+                                <li class="jalasatDates" style="border-bottom:  4px solid #4a90e2"><a class="theLinks"
+                                                                                                      href="/user/<%= response[i].id %>"><%= response[i].year
+                                        + "/" + response[i].month + "/" + response[i].day %></a></li>
+                            <% } %>
                     <% } %>
                 </ul>
                 <img id="jalasatRightArrow" src="/icon/right.svg"/>
@@ -155,12 +175,33 @@
                     document.getElementById("yearHeader").innerHTML = "<% myDate.jy %>";
                 }
 
+                var element;
+                <% if( currentSeasonNumber === 1 ) { %>
+                element = document.getElementById("seasonOne");
+                element.style.color = "#ffffff";
+                element.style.backgroundColor = "#117fff";
+                <% } %>
+                <% if( currentSeasonNumber === 2 ) { %>
+                element = document.getElementById("seasonTwo");
+                element.style.color = "#ffffff";
+                element.style.backgroundColor = "#117fff";
+                <% } %>
+                <% if( currentSeasonNumber === 3 ) { %>
+                element = document.getElementById("seasonThree");
+                element.style.color = "#ffffff";
+                element.style.backgroundColor = "#117fff";
+                <% } %>
+                <% if( currentSeasonNumber === 4 ) { %>
+                element = document.getElementById("seasonFour");
+                element.style.color = "#ffffff";
+                element.style.backgroundColor = "#117fff";
+                <% } %>
             </script>
         </div>
     </div>
 
     <div id="addTarheDars-page" class="addTarheDarsPage">
-        <div class="container">
+        <div class="no-gutters container">
             <img class="logo" src="/icon\iconfinder_Tilda_Icons_1ed_calendar_3586371.svg"/>
             <div class="myTexts">
                 <p id="normaltext1">ثبت طرح درس سالانه</p>
@@ -189,7 +230,7 @@
     </div>
 
     <div id="addGozaresh-page" class="addGozareshPage">
-        <div class="container">
+        <div class="no-gutters container">
             <img src="/icon/iconfinder_icon-42-note-add_314405.svg"></img>
             <div class="textbozorg">گزارش جلسه</div>
             <div id="tarikhAddGozaresh" class="normaltext">تاریخ</div>
@@ -226,36 +267,9 @@
                     </ul>
 
                     <ul id="myCalendarDays" class="days">
-                        <li onclick="setValue(1)" class="dayNumbers">1</li>
-                        <li onclick="setValue(2)" class="dayNumbers">2</li>
-                        <li onclick="setValue(3)" class="dayNumbers">3</li>
-                        <li onclick="setValue(4)" class="dayNumbers">4</li>
-                        <li onclick="setValue(5)" class="dayNumbers">5</li>
-                        <li onclick="setValue(6)" class="dayNumbers">6</li>
-                        <li onclick="setValue(7)" class="dayNumbers">7</li>
-                        <li onclick="setValue(8)" class="dayNumbers">8</li>
-                        <li onclick="setValue(9)" class="dayNumbers">9</li>
-                        <li onclick="setValue(10)" class="dayNumbers">10</li>
-                        <li onclick="setValue(11)" class="dayNumbers">11</li>
-                        <li onclick="setValue(12)" class="dayNumbers">12</li>
-                        <li onclick="setValue(13)" class="dayNumbers">13</li>
-                        <li onclick="setValue(14)" class="dayNumbers">14</li>
-                        <li onclick="setValue(15)" class="dayNumbers">15</li>
-                        <li onclick="setValue(16)" class="dayNumbers">16</li>
-                        <li onclick="setValue(17)" class="dayNumbers">17</li>
-                        <li onclick="setValue(18)" class="dayNumbers">18</li>
-                        <li onclick="setValue(19)" class="dayNumbers">19</li>
-                        <li onclick="setValue(20)" class="dayNumbers">20</li>
-                        <li onclick="setValue(21)" class="dayNumbers">21</li>
-                        <li onclick="setValue(22)" class="dayNumbers">22</li>
-                        <li onclick="setValue(23)" class="dayNumbers">23</li>
-                        <li onclick="setValue(24)" class="dayNumbers">24</li>
-                        <li onclick="setValue(25)" class="dayNumbers">25</li>
-                        <li onclick="setValue(26)" class="dayNumbers">26</li>
-                        <li onclick="setValue(27)" class="dayNumbers">27</li>
-                        <li onclick="setValue(28)" class="dayNumbers">28</li>
-                        <li onclick="setValue(29)" class="dayNumbers">29</li>
-                        <li onclick="setValue(30)" class="dayNumbers">30</li>
+                        <% for(var i = 1 ; i < 31 ; i++) { %>
+                            <li onclick="setValue(<%= i %>)" class="dayNumbers"><%= i %></li>
+                        <% } %>
                     </ul>
                 </div>
             </div>
@@ -269,12 +283,9 @@
                     document.getElementById("tarikhTextareaAddGozaresh").value = <%= myDate.jy %> +"/" +<%= myDate.jm %>
                         +"/" + a;
                     document.getElementById("dateInputDay").value = a;
-                    document.getElementById("dateInputMonth").value = <%= myDate.jm %> +0;
-                    document.getElementById("dateInputYear").value = <%= myDate.jy %> +0;
-                    var mon = <%= myDate.jm + 3 %> +0;
-                    var month = mon / 3;
-                    console.log(month);
-                    document.getElementById("dateInputSeason").value = month.toFixed();
+                    document.getElementById("dateInputMonth").value = <%= myDate.jm %> + 0;
+                    document.getElementById("dateInputYear").value = <%= myDate.jy %> + 0;
+                    document.getElementById("dateInputSeason").value = <%= currentSeasonNumber %> + 0;
                     console.log(document.getElementById("dateInputDay").value);
                     console.log(document.getElementById("dateInputMonth").value);
                     console.log(document.getElementById("dateInputYear").value);
@@ -347,54 +358,69 @@
                 </li>
             </ul>
             <script>
-                <% if(page === 5) { %>
-                document.getElementById("reviewGozaresh-page").style.display = "inline-block";
-                document.getElementById("tedadJalasat-page").style.display = "none";
-                <% } %>
-
-                function displaySendMassage() {
+                function hideCurrent() {
                     document.getElementById("addGozaresh-page").style.display = "none";
                     document.getElementById("addTarheDars-page").style.display = "none";
                     document.getElementById("reviewGozaresh-page").style.display = "none";
-                    document.getElementById("sendMassage-page").style.display = "inline-block";
                     document.getElementById("tedadJalasat-page").style.display = "none";
+                    document.getElementById("sendMassage-page").style.display = "none";
                 }
 
+                <% if(page == 1) { %>
+                document.getElementById("addGozaresh-page").style.display = "inline-block";
+                <% } %>
+                <% if(page == 2) { %>
+                document.getElementById("addTarheDars-page").style.display = "inline-block";
+                <% } %>
+                <% if(page == 3) { %>
+                document.getElementById("reviewGozaresh-page").style.display = "inline-block";
+                <% } %>
+                <% if(page == 4) { %>
+                document.getElementById("tedadJalasat-page").style.display = "inline-block";
+                <% } %>
+                <% if(page == 5) { %>
+                document.getElementById("sendMassage-page").style.display = "inline-block";
+                <% } %>
+
+                // function displaySendMassage() {
+                //     location.href = "/user/sendMassagePage"
+                // }
+
                 function displayReviewGozaresh() {
-                    document.getElementById("addGozaresh-page").style.display = "none";
-                    document.getElementById("addTarheDars-page").style.display = "none";
-                    document.getElementById("reviewGozaresh-page").style.display = "inline-block";
-                    document.getElementById("sendMassage-page").style.display = "none";
-                    document.getElementById("tedadJalasat-page").style.display = "none";
+                    location.href = "/user/reviewGozareshPage"
                 }
 
                 function displayAddTarheDars() {
-                    document.getElementById("addGozaresh-page").style.display = "none";
-                    document.getElementById("addTarheDars-page").style.display = "inline-block";
-                    document.getElementById("reviewGozaresh-page").style.display = "none";
-                    document.getElementById("sendMassage-page").style.display = "none";
-                    document.getElementById("tedadJalasat-page").style.display = "none";
+                    location.href = "/user/addTarhPage"
                 }
 
                 function displayAddGozaresh() {
-                    document.getElementById("addGozaresh-page").style.display = "inline-block";
-                    document.getElementById("addTarheDars-page").style.display = "none";
-                    document.getElementById("reviewGozaresh-page").style.display = "none";
-                    document.getElementById("sendMassage-page").style.display = "none";
-                    document.getElementById("tedadJalasat-page").style.display = "none";
+                    location.href = "/user/addGozareshPage"
                 }
 
                 function displayTedadJalasat() {
-                    document.getElementById("addGozaresh-page").style.display = "none";
-                    document.getElementById("addTarheDars-page").style.display = "none";
-                    document.getElementById("reviewGozaresh-page").style.display = "none";
-                    document.getElementById("sendMassage-page").style.display = "none";
-                    document.getElementById("tedadJalasat-page").style.display = "inline-block";
+                    location.href = "/user/tedadJalasatPage"
                 }
             </script>
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous">
+</script>
+
+<!-- Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous">
+</script>
+
+<!-- Compiled and Minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous">
+</script>
 </body>
 
 </body>

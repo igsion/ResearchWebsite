@@ -38,7 +38,6 @@ label {
 .card {
     perspective: 150rem;
     -moz-perspective: 150rem;
-
     border-style: hidden;
     border-radius: 60px;
     position: fixed;
@@ -141,7 +140,6 @@ label {
     border-bottom-color: #004987;
     padding: 10px 8px 11px;
     text-align: center;
-
 }
 
 .password {

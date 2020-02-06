@@ -20,11 +20,12 @@ var review = {
     lavazem: "",
     tedad: "",
     hoze: "",
-    tarikh: ""
+    tarikh: "",
+    condition: 1
 };
+var id = "";
 
 var currentSeasonNumber, totalSessions, page, resp = {};
-
 var responseUsers, responseTarhs;
 
 router.get('/', function (req, res, next) {
@@ -134,13 +135,41 @@ router.get('/winter', function (req, res, next) {
 
 router.get('/review/:id', function (req, res, next) {
     reportsModel.Report.findById(req.params.id, function (err, response) {
+        id = req.params.id;
         review.sharh = response.description;
         review.barname = response.plan;
         review.lavazem = response.tools;
         review.tedad = response.sessions;
         review.hoze = response.area;
         review.tarikh = response.year + "/" + response.month + "/" + response.day;
+        review.condition = response.condition;
         console.log(review);
+        page = 5;
+        res.render('adminPanel', {
+            title: 'Admin Panel', fullname: req.session.fullname, job: req.session.job,
+            responseUsers: responseUsers, responseTarhs: responseTarhs, response: resp, todayDate: todayDate,
+            currentSeason: "", myDate: myDate, currentSeasonNumber: currentSeasonNumber, total: totalSessions,
+            seasonTotal: 0, review: review, page: page
+        });
+    });
+});
+
+router.get('/review/admin/accept', function (req, res, next) {
+    reportsModel.Report.findByIdAndUpdate(id , {condition : 3} ,function (err, response) {
+        review.condition = 3;
+        page = 5;
+        res.render('adminPanel', {
+            title: 'Admin Panel', fullname: req.session.fullname, job: req.session.job,
+            responseUsers: responseUsers, responseTarhs: responseTarhs, response: resp, todayDate: todayDate,
+            currentSeason: "", myDate: myDate, currentSeasonNumber: currentSeasonNumber, total: totalSessions,
+            seasonTotal: 0, review: review, page: page
+        });
+    });
+});
+
+router.get('/review/admin/reject', function (req, res, next) {
+    reportsModel.Report.findByIdAndUpdate(id,{condition : 2} , function (err, response) {
+        review.condition = 2;
         page = 5;
         res.render('adminPanel', {
             title: 'Admin Panel', fullname: req.session.fullname, job: req.session.job,
